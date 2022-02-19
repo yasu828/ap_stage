@@ -1,0 +1,138 @@
+.images{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+
+  .box{
+    width: calc(100% / 3);
+    display: inline-block;
+    height:calc(100vh - 190px);
+  }
+  // アニメーション左
+  .imageanimationleft{
+    background-image: url("../assets/images/fog.png");
+    animation: backGroundImageLeft 2s;
+    position: relative;
+  }
+  @keyframes backGroundImageLeft {
+    0% {
+    }
+    50%{
+      opacity: 0;
+    }
+    80%{
+      // background-image: url("../assets/images/fog.png");
+      // background-image: url("../assets/images/fog-dec.png");
+      opacity: 1;
+    }
+    100% {
+      // background-image: url("../assets/images/fog.png");
+      opacity: 2;
+    }
+  }
+  .imagestextleft{
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    color: coral;
+    font-size: 48px;
+    opacity: 1;
+    animation: imagesTextLeft 1s;
+  }
+  @keyframes imagesTextLeft {
+    from{
+      transform: translate(0, -50px);
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+  // アニメーション真ん中
+  .imageanimationcenter{
+    // background-image: url("../assets/images/cat.png");
+    animation: backGroundImageCenter 3.1s;
+    position: relative;
+  }
+  @keyframes backGroundImageCenter {
+    0% {
+    }
+    50%{
+      opacity: 0;
+    }
+    80%{
+      // background-image: url("../assets/images/cat.png");
+      // background-image: url("../assets/images/cat-dec.png");
+      opacity: 1;
+    }
+    100% {
+      // background-image: url("../assets/images/cat.png");
+      opacity: 2;
+    }
+  }
+  .imagestextcenter{
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    color: coral;
+    font-size: 48px;
+    opacity: 1;
+    animation: imagesTextCenter 1.5s;
+  }
+  @keyframes imagesTextCenter {
+    from{
+      transform: translate(0, -50px);
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+  // アニメーション右
+  .imageanimationright{
+    // background-image: url("../assets/images/night.png");
+    animation: backGroundImageRight 4.5s;
+    position: relative;
+  }
+  @keyframes backGroundImageRight {
+    0% {
+    }
+    50%{
+      opacity: 0;
+    }
+    60%{
+      // background-image: url("../assets/images/night.png");
+      // background-image: url("../assets/images/night-dec.png");
+      opacity: 1;
+    }
+    80% {
+      // background-image: url("../assets/images/night.png");
+      opacity: 2;
+    }
+  }
+  
+  .imagestextright{
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    color: coral;
+    font-size: 48px;
+    opacity: 1;
+    animation: imagesTextRight 2s;
+  }
+  @keyframes imagesTextRight {
+    from{
+      transform: translate(0, -50px);
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+}
