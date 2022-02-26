@@ -1,9 +1,40 @@
-.blue-btn{
+.blue-btn {
   border-radius: 5%;
   background-color: rgb(98, 136, 240);
   color: rgb(252, 241, 196);
   display: block;
 }
-.pointer{
+
+.t-center{
+  text-align: center;
+}
+.j-center{
+  justify-content: center
+}
+.w-100{
+  width: 100%;
+}
+.b-green{
+  background-color: rgba(172, 255, 47, 0.486);
+}
+.b-blue{
+  background-color: rgba(135, 135, 235, 0.603);
+}
+
+.pointer {
   cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+.fixed {
+  position: fixed;
+}
+.t-white {
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
 }
