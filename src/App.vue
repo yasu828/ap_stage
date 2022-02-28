@@ -1,5 +1,6 @@
 <template>
 <div id="to">
+  <AppHeader />
   <router-view></router-view>
 </div>
 </template>
@@ -7,10 +8,13 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue'
+import AppHeader from "./components/ex/AppHeader.vue"
 
 export default defineComponent({
   el: '#top-body',
+  // type inference enabled
   components: {
+    AppHeader,
   },
   setup(){
     const state = reactive({

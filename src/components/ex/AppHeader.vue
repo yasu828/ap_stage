@@ -69,7 +69,7 @@ export default defineComponent({
     align-items: flex-end;
     background: #fff;
     z-index: 2;
-    // position: fixed;
+    position: fixed;
     height: 100px;
     width: 100%;
     border-bottom: 1px solid #808080;
