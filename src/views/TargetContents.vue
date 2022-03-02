@@ -1,35 +1,44 @@
 <template>
-  <section class="height"></section>
   <section 
   class="t-center"
   id="section1"
   >
-    <div 
-    class="p-5"
-    :class="{up15vh: true}"
+    <div
     ref="targetBox"
+    class="up15vh"
     >
       <div :style="`opacity:${state.overlap}; transform: matrix(1, 0, 0, 1, 0, ${state.trans});`">
-        <h1 class="m-5">
-          iPhone 13 Pro
+        <h1 style="font-size: 21px;">
+          上昇します。
         </h1>
-        <h3 class="m">
-          すべてがプロ
+        <h3 style="font-size: 64px; margin-top: 17px;">
+          上昇します。上昇します。
         </h3>
-        <p class="m">
-          iPhone 13 Proの進化は圧倒的。何をする時でも驚くような<br>
-          スピードをもたらし、写真撮影とビデオ撮影の常識を一変させます。<br>
-          魅力的な2つのサイズから選びましょう。
+        <p style="font-size: 21px; margin: 27px auto;">
+          上昇します。上昇します。上昇します。上昇します。<br>
+          上昇します。上昇します。上昇します。<br>
+          上昇します。上昇します。<br>
         </p>
+      </div>
+      <div class="t-center" style="transform: matrix(1, 0, 0, 1, 0, 185);">
+        <div :style="`
+        background: ${state.linear}(45deg,rgb(255, 37, 37)${0 - state.num}%,rgb(255, 230, 37)${100 - state.num}%,rgb(59, 37, 255)${170 - state.num}%);
+        font-size: 4rem;
+        font-weight: bold;
+        -webkit-text-fill-color: transparent;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;`"
+        >
+          グラデーションカラー
+        </div>
       </div>
     </div>
   </section>
-  <section class="height"></section>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, onMounted, ref } from 'vue'
-// import RootLine from "../components/ex/rootline.vue";
 
 export default defineComponent({
   components:{},
@@ -38,9 +47,13 @@ export default defineComponent({
       isActive: false,
       fixed: "nat",
       overlap: 0.0,
-      trans: 1.0,
+      trans: 105.0,
+      linear: 'linear-gradient',
+      num:10.0,
+      showte: false,
     })
-    function buildThresholdList() { // thresholdの値をpushしている。numStep(20等分(5%毎))を指定
+
+    function buildThresholdList() {
       let thresholds = [];
       let numSteps = 20;
       for (let i = 1.0; i <= numSteps; i++) {
@@ -51,85 +64,67 @@ export default defineComponent({
       thresholds.push(1);
       return thresholds;
     }
+
     onMounted(async() => {
       await obse()
     })
 
-      const targetBox = ref()
+    const targetBox = ref()
 
     const obse = (async() => {
       let options = {
         root: null,
-        rootMargin: "0px",
+        rootMargin: "-105px",
         threshold: buildThresholdList()
       }
       let observer;
       observer = new IntersectionObserver(bhandleIntersect, options);
       observer.observe(targetBox.value)
     })
+
     let guRatio = 0.0;
     const bhandleIntersect = (entries:any) => {
       entries.forEach((entry:any) => {
         if(state.overlap <= 0.7 && state.overlap > 0){
-          state.trans = entry.intersectionRatio * 100
-          console.log(entry.intersectionRatio)
+          state.trans = entry.intersectionRatio * 150
         }
         if (entry.intersectionRatio > guRatio) {
           state.overlap = entry.intersectionRatio;
-          console.log("いん")
+          state.num = Math.round(entry.intersectionRatio * 100);
         } else {
           state.overlap = entry.intersectionRatio;
-          console.log("アウト")
+          state.num = Math.round(entry.intersectionRatio * 100);
         }
         guRatio = entry.intersectionRatio;
       });
-    }
-
-    const onClicknum = () => {
-      console.log(screen.width)
-      console.log(targetBox.value)
-      console.log(targetBox)
-      console.log(screen.height - 100 + "px")
     }
 
     return{
       state,
       obse,
       targetBox,
-      onClicknum,
     }
   }
 })
 </script>
 
 <style lang="scss" scoped>
-.height {
-  height: 150vh;
-}
 #section1 {
   width: 100%;
-  height: 100px;
+  height: 100vh;
   background-color: rgba(169, 169, 169, 0.3);
 
-  .m {
-    margin: 20px auto 0;
+  .font-size64 {
+    font-size: 64px;
   }
-  .m-5 {
-    margin: 150px auto 0;
-  }
-  .p-5 {
-    border: solid;
-    padding: 100px;
-  }
+
   .up15vh {
-    color: coral;
     animation: imagesTextLeft 1s;
-    height: 100px;
-    background-color: darkolivegreen;
   }
   @keyframes imagesTextLeft {
     from{
       transform: translate(0, 15vh);
+      opacity: 0.1;
     }
   }
 }

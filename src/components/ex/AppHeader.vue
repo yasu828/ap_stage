@@ -1,6 +1,6 @@
 <template>
 <div id="app-header">
-  <header class="header flex">
+  <header class="flex header">
     <p class="ppo">
       <a href="contents">contents</a>
     </p>
@@ -8,7 +8,6 @@
       <a href="first">first</a>
     </p>
       <span class="pointer" :class="state.kuri" @click="onClickcolor">クリン</span>
-      <p>{{ }}</p>
       {{ state.bin }}
     <p class="ppo">
       <router-link
@@ -61,6 +60,7 @@ export default defineComponent({
   background-color: green;
 }
 #app-header{
+  opacity: 0.2;
   height: 100px;
   width: 100%;
 

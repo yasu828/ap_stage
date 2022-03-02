@@ -46,18 +46,13 @@
             あなたは<br>
             どうなりたい？<br>
           </h2>
-<!-- <intersection-observer
-  sentinal-name="sentinal-name"
-  @on-intersection-element="onIntersectionElement"
-></intersection-observer> -->
-<div
+      <div
         class="h-24 bg-blue-200 transition-all duration-500 transform"
         :class="{
           'translate-y-0 opacity-100': isIntersectingElement,
           'translate-y-full opacity-0': !isIntersectingElement,
         }"
       >
-        Animation
       </div>
           <div class="t-center w-100">
             <router-link to="first">
@@ -70,9 +65,7 @@
     <section class="disablity">
       <router-link to="/first">
       <span class="lin">別リンク</span>
-      
-3
-4
+      34
       </router-link>
     </section>
 
@@ -178,34 +171,15 @@ export default defineComponent({
     if(store.state.isFirstTime){
       window.setTimeout(dispMsg, 4000);
       store.state.isFirstTime = false;
-      }
-
-    // if(window.scrollY >= 900){
-      //   state.hei = scrollY;
-    // }
-
+    }
 
     onMounted(async() => {
       state.hei = window.scrollY;
     });
-// onIntersectionElement(value) {
-//   // value will be true when the component is visible on the page   
-//      otherwise false
-//   // you can do whatever you want
-// },
+
     const onClickapplyScroll = () => {
       dispMsg()
     }
-
-  // watch(() => state.hei,(hei, prevCount) => {
-  //   state.hei = window.scrollY;
-  //   console.log(hei)
-  //   console.log(prevCount)
-  // })
-
-// directly watching a ref
-// const /
-
 
     return {
       state,
@@ -213,16 +187,6 @@ export default defineComponent({
       dispMsg,
     }
   },
-  // data() {
-  //   return {
-  //     isIntersectingElement: false,
-  //   };
-  // },
-  // methods: {
-  //   // onIntersectionElement(value) {
-  //   //   this.isIntersectingElement = value;
-  //   // },
-  // },
 })
 </script>
 
