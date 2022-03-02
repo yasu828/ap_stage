@@ -10,12 +10,27 @@ const routes = [
   {
     path: '/talk',
     name: 'Talk',
-    component: () => import('../views/bababa.vue')
+    component: () => import('../views/intersectionHome.vue')
   },
   {
     path: '/contents',
     name: 'Contents',
     component: () => import('../views/TargetContents.vue')
+  },
+  {
+    path: '/inter',
+    name: 'Inter',
+    component: () => import('../views/intersectionHome.vue')
+  },
+  {
+    path: '/intersection-right',
+    name: 'intersectionRight',
+    component: () => import('../components/intersection/intersectionRight.vue')
+  },
+  {
+    path: '/intersection-left',
+    name: 'intersectionLeft',
+    component: () => import('../components/intersection/intersectionLeft.vue')
   },
   {
     path: '/about',

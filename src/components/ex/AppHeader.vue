@@ -2,6 +2,16 @@
 <div id="app-header">
   <header class="flex header">
     <p class="ppo">
+      <a href="inter">inter</a>
+    </p>
+    <p class="ppo">
+      <a href="intersection-left">left</a>
+    </p>
+    <p class="ppo">
+      <a href="intersection-right">right</a>
+    </p>
+
+    <p class="ppo">
       <a href="contents">contents</a>
     </p>
     <p class="ppo">
@@ -63,6 +73,10 @@ export default defineComponent({
   opacity: 0.2;
   height: 100px;
   width: 100%;
+
+  p {
+    margin: 3px 6px;
+  }
 
   .header{
     justify-content: flex-end;

@@ -22,7 +22,7 @@
       </div>
       <div class="t-center" style="transform: matrix(1, 0, 0, 1, 0, 185);">
         <div :style="`
-        background: ${state.linear}(45deg,rgb(255, 37, 37)${0 - state.num}%,rgb(255, 230, 37)${100 - state.num}%,rgb(59, 37, 255)${170 - state.num}%);
+        background: ${state.linear}(45deg,rgb(255, 37, 37)${0 - state.num}%,rgb(255, 230, 37)${100 - state.num}%,rgb(165, 37, 255)${170 - state.num}%);
         font-size: 4rem;
         font-weight: bold;
         -webkit-text-fill-color: transparent;
@@ -112,11 +112,6 @@ export default defineComponent({
 #section1 {
   width: 100%;
   height: 100vh;
-  background-color: rgba(169, 169, 169, 0.3);
-
-  .font-size64 {
-    font-size: 64px;
-  }
 
   .up15vh {
     animation: imagesTextLeft 1s;
