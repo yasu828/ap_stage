@@ -5,7 +5,7 @@
       <div ref="leftReficon">
         <transition name="list">
           <div v-show="state.listicon">
-            <slot name="listicon">fdf</slot>
+            <slot name="listicon"></slot>
           </div>
         </transition>
       </div>
@@ -16,7 +16,7 @@
         <transition name="list">
           <div v-show="state.listh1">
             <h1 class="inter-h1">
-              <slot name="listh1">as</slot>
+              <slot name="listh1"></slot>
             </h1>
           </div>
         </transition>
@@ -28,7 +28,7 @@
         <transition name="list">
           <div v-show="state.listspan">
             <span class="inter-span">
-              <slot name="listspan">fsa</slot>
+              <slot name="listspan"></slot>
             </span>
           </div>
         </transition>
