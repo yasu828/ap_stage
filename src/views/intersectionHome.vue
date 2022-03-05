@@ -1,7 +1,7 @@
 <template>
 <div>
   <TargetContents />
-  <article class="flex">
+  <article class="flex">  
     <IntersectionLeft />
     <IntersectionRight /> 
   </article>

@@ -3,11 +3,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, reactive } from 'vue'
 
 export default defineComponent({
   setup() {
-    
+    const state = reactive({
+
+    })
+
+    return {
+      state,
+    }
   },
 })
 </script>
@@ -15,6 +21,7 @@ export default defineComponent({
 <style lang="scss">
 #inter-right {
   width: 50%;
+  max-width: 50%;
   height: 100vh;
   background-color: rgba(192, 168, 168, 0.502);
 }

@@ -7,6 +7,7 @@
     ref="targetBox"
     class="up15vh"
     >
+  <span class="pd20">動きのあるwebサイトで体験を届けたい</span>
       <div :style="`opacity:${state.overlap}; transform: matrix(1, 0, 0, 1, 0, ${state.trans});`">
         <h1 style="font-size: 21px;">
           上昇します。
@@ -20,7 +21,7 @@
           上昇します。上昇します。<br>
         </p>
       </div>
-      <div class="t-center" style="transform: matrix(1, 0, 0, 1, 0, 185);">
+      <div class="t-center" style="margin: 185px 0;">
         <div :style="`
         background: ${state.linear}(45deg,rgb(255, 37, 37)${0 - state.num}%,rgb(255, 230, 37)${100 - state.num}%,rgb(165, 37, 255)${170 - state.num}%);
         font-size: 4rem;
@@ -47,7 +48,7 @@ export default defineComponent({
       isActive: false,
       fixed: "nat",
       overlap: 0.0,
-      trans: 105.0,
+      trans: 155.0,
       linear: 'linear-gradient',
       num:10.0,
       showte: false,
@@ -55,7 +56,7 @@ export default defineComponent({
 
     function buildThresholdList() {
       let thresholds = [];
-      let numSteps = 20;
+      let numSteps = 50;
       for (let i = 1.0; i <= numSteps; i++) {
         let ratio = i / numSteps;
         thresholds.push(ratio);
@@ -85,8 +86,8 @@ export default defineComponent({
     let guRatio = 0.0;
     const bhandleIntersect = (entries:any) => {
       entries.forEach((entry:any) => {
-        if(state.overlap <= 0.7 && state.overlap > 0){
-          state.trans = entry.intersectionRatio * 150
+        if(state.overlap <= 0.8 && state.overlap > 0){
+          state.trans = entry.intersectionRatio * 200
         }
         if (entry.intersectionRatio > guRatio) {
           state.overlap = entry.intersectionRatio;
@@ -111,10 +112,22 @@ export default defineComponent({
 <style lang="scss" scoped>
 #section1 {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: 570px;
 
+  .pd20 {
+    display: inline-block;
+    transform: matrix(1, 0, 0, 1, 0, 50);
+  }
+
+  // .a15vh {
+  //   display: inline-block;
+  //   height: 100px;
+  //   width: 100%;
+  // }
   .up15vh {
     animation: imagesTextLeft 1s;
+    height: 300px;
   }
   @keyframes imagesTextLeft {
     from{
