@@ -48,11 +48,6 @@ export default function () {
   }
 
   function handleIntersect(entries) { //閾値を超えるたびに発火する関数
-    // console.log("entries")
-    // console.log(entries)
-    console.log("entries")
-    console.log(entries)
-    // console.log("entries")
     entries.forEach((entry) => {
       if (entry.intersectionRatio > prevRatio) {  //prevRatioの初期値は0.0と最初に指定している。
         boxElement2.style.backgroundColor = increasingColor.replace("ratio", entry.intersectionRatio);

@@ -26,13 +26,13 @@
       home
       </router-link>
     </p>
-    <p class="ppo">
+    <!-- <p class="ppo">
       <router-link
         to="/ka"
       >
       kakaka
       </router-link>
-    </p>
+    </p> -->
     <p class="ppo">
       <a href="/About">about</a>
     </p>
@@ -70,7 +70,6 @@ export default defineComponent({
   background-color: green;
 }
 #app-header{
-  opacity: 0.2;
   height: 100px;
   width: 100%;
 

@@ -1,37 +1,39 @@
 <template>
   <div id="inter-left">
-    <!-- アイコン -->
-    <div class="left-reficon">
-      <div ref="leftReficon">
-        <transition name="list">
-          <div v-show="state.listicon">
-            <slot name="listicon"></slot>
-          </div>
-        </transition>
+    <div class="contents">
+      <!-- アイコン -->
+      <div class="left-reficon">
+        <div ref="leftReficon">
+          <Transition name="list">
+            <div v-show="state.listicon">
+              <slot name="listicon"></slot>
+            </div>
+          </Transition>
+        </div>
       </div>
-    </div>
-    <!-- タイトル -->
-    <div class="left-refh1">
-      <div ref="leftRefh1">
-        <transition name="list">
-          <div v-show="state.listh1">
-            <h1 class="inter-h1">
-              <slot name="listh1"></slot>
-            </h1>
-          </div>
-        </transition>
+      <!-- タイトル -->
+      <div class="left-refh1">
+        <div ref="leftRefh1">
+          <Transition name="list">
+            <div v-show="state.listh1">
+              <h1 class="inter-h1">
+                <slot name="listh1"></slot>
+              </h1>
+            </div>
+          </Transition>
+        </div>
       </div>
-    </div>
-    <!-- コンテンツ -->
-    <div class="left-refspan">
-      <div ref="leftRefspan">
-        <transition name="list">
-          <div v-show="state.listspan">
-            <span class="inter-span">
-              <slot name="listspan"></slot>
-            </span>
-          </div>
-        </transition>
+      <!-- コンテンツ -->
+      <div class="left-refspan">
+        <div ref="leftRefspan">
+          <Transition name="list">
+            <div v-show="state.listspan">
+              <span class="inter-span">
+                <slot name="listspan">f</slot>
+              </span>
+            </div>
+          </Transition>
+        </div>
       </div>
     </div>
   </div>
@@ -145,17 +147,25 @@ export default defineComponent({
 
 <style lang="scss">
 #inter-left {
-  width: 50%;
-  max-width: 50%;
-  height: calc(100vh - 106px);
-  background-color: rgba(128, 128, 128, 0.502);
+  min-height: 250px;
+  width: 100%;
+  max-width: 100%;
+  // background-color: rgba(184, 175, 175, 0.057);
+  overflow-wrap: break-word;
+
+  .contents {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    width: 65%;
+  }
 
   .list-enter-active,
-  .list-leave-active {
-    transition: 0.7s ease;
+  .list-leave-active {  // 変化中の状態
+    transition: 0.3s ease;
   }
   .list-enter-from,
-  .list-leave-to {
+  .list-leave-to {  // 変化前変化後の状態
     opacity: 0;
     transform: translateY(40px);
   }
@@ -165,7 +175,6 @@ export default defineComponent({
     width: 40px;
     font-size: 26px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -180,6 +189,7 @@ export default defineComponent({
   }
   .left-refspan {
     height: 80px;
+    margin-top: 15px;
 
     .inter-span {
       font-size: 19px;

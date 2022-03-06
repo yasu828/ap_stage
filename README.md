@@ -22,3 +22,10 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+npm lists
+vue3
+vuex
+vue router
+sass-loader
+type script

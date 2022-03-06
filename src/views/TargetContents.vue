@@ -3,11 +3,16 @@
   class="t-center"
   id="section1"
   >
+  <div>
+    <span class="pd20">
+      動きのあるwebサイトで体験を届けたい<br>
+      interseciton observer APIに注目したページです。
+    </span>
+  </div>
     <div
     ref="targetBox"
     class="up15vh"
     >
-  <span class="pd20">動きのあるwebサイトで体験を届けたい</span>
       <div :style="`opacity:${state.overlap}; transform: matrix(1, 0, 0, 1, 0, ${state.trans});`">
         <h1 style="font-size: 21px;">
           上昇します。
