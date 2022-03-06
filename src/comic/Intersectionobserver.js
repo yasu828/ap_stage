@@ -13,10 +13,8 @@ export default function () {
   window.addEventListener("load", (event) => {
     boxElement = document.querySelector("#box");  // 監視する要素
     boxElement2 = document.querySelector(".lplp");
-
-    createObserver();
-    console.log("event")
     console.log(event)
+    createObserver();
   }, false);
 
   function createObserver() {
@@ -29,10 +27,6 @@ export default function () {
     };
 
     observer = new IntersectionObserver(handleIntersect, options);
-    console.log("observer3")
-    console.log(observer)
-    // console.log(observer)
-
     observer.observe(boxElement);
   }
 
@@ -51,21 +45,13 @@ export default function () {
     entries.forEach((entry) => {
       if (entry.intersectionRatio > prevRatio) {  //prevRatioの初期値は0.0と最初に指定している。
         boxElement2.style.backgroundColor = increasingColor.replace("ratio", entry.intersectionRatio);
-        console.log("entry")
-    console.log(entry)
-        // console.log(entry.intersectionRatio)
-        // console.log("entry.intersectionRatio")
+        console.log(entry)
       } else {
         boxElement2.style.backgroundColor = decreasingColor.replace("ratio", entry.intersectionRatio);
-        // console.log(entry.intersectionRatio)
-        // console.log("entry")
       }
       prevRatio = entry.intersectionRatio;
     });
   }
-  console.log("buildThresholdList()")
-  console.log(buildThresholdList())
-  console.log("buildThresholdList()")
 
   return {
     createObserver,

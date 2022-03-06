@@ -59,8 +59,7 @@
       </intersection-right>
     </section> 
   </article>
-
-  <Thank />
+  <Fin />
 </div>
 </template>
 
@@ -71,7 +70,7 @@ import First from '../components/intersection/first.vue'
 import Second from '../components/intersection/second.vue'
 import IntersectionLeft from '../components/intersection/intersectionLeft.vue'
 import IntersectionRight from '../components/intersection/intersectionRight.vue'
-import Thank from '../components/intersection/thank.vue'
+import Fin from '../components/intersection/fin.vue'
 
 export default defineComponent({
   components:{
@@ -80,7 +79,7 @@ export default defineComponent({
     Second,
     IntersectionLeft,
     IntersectionRight,
-    Thank
+    Fin,
   },
   setup() {
     const state = reactive ({
