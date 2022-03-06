@@ -7,19 +7,26 @@
 .hei {
   height: 50px;
 }
-.t-center{
+.t-center {
   text-align: center;
 }
-.j-center{
+.j-center {
   justify-content: center
 }
-.w-100{
+.all-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.w-100 {
   width: 100%;
 }
-.b-green{
+.b-green {
   background-color: rgba(172, 255, 47, 0.486);
 }
-.b-blue{
+.b-blue {
   background-color: rgba(135, 135, 235, 0.603);
 }
 

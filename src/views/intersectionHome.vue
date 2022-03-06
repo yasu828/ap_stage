@@ -60,7 +60,7 @@
     </section> 
   </article>
 
-  <interbal class="hei"></interbal>
+  <Thank />
 </div>
 </template>
 
@@ -71,6 +71,7 @@ import First from '../components/intersection/first.vue'
 import Second from '../components/intersection/second.vue'
 import IntersectionLeft from '../components/intersection/intersectionLeft.vue'
 import IntersectionRight from '../components/intersection/intersectionRight.vue'
+import Thank from '../components/intersection/thank.vue'
 
 export default defineComponent({
   components:{
@@ -79,6 +80,7 @@ export default defineComponent({
     Second,
     IntersectionLeft,
     IntersectionRight,
+    Thank
   },
   setup() {
     const state = reactive ({
