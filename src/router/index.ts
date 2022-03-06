@@ -40,7 +40,7 @@ const routes = [
   {
     path: '/first',
     name: 'first',
-    component: () => import('../views/first.vue'),
+    component: () => import('../components/intersection/first.vue'),
     children: [
       {
         // /user/:id/profile がマッチした時に

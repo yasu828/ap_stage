@@ -2,8 +2,35 @@
 <div>
   <TargetContents />
   <p style="height:80px; font-size: 48px; padding-top:10px;" class="t-center">(opacity/transform)</p>
-  <First />
-  <p style="height:80px; font-size: 48px; padding-top:10px;" class="t-center">(ture/false)</p>
+  <article class="flex">
+    <section class="inter-section-left">
+      <first v-for="(list, i) in state.lists" :key="i">
+        <template v-slot:listicon>
+          {{list.icon}}
+        </template>
+        <template v-slot:listh1>
+          {{list.h1}}
+        </template>
+        <template v-slot:listspan>
+          {{list.span}}
+        </template>
+      </first>
+    </section>
+    <section class="inter-section-left">
+      <second v-for="(list, i) in state.lists" :key="i">
+        <template v-slot:listicon>
+          {{list.icon}}
+        </template>
+        <template v-slot:listh1>
+          {{list.h1}}
+        </template>
+        <template v-slot:listspan>
+          {{list.span}}
+        </template>
+      </second>
+    </section> 
+  </article>
+  <p style="height:80px; font-size: 48px; padding-top:10px;" class="t-center">(transition:ture/false)</p>
   <article class="flex">
     <section class="inter-section-left">
       <intersection-left v-for="(list, i) in state.lists" :key="i">
@@ -40,7 +67,8 @@
 <script lang="ts">
 import { defineComponent, reactive } from 'vue'
 import TargetContents from './TargetContents.vue'
-import First from './first.vue'
+import First from '../components/intersection/first.vue'
+import Second from '../components/intersection/second.vue'
 import IntersectionLeft from '../components/intersection/intersectionLeft.vue'
 import IntersectionRight from '../components/intersection/intersectionRight.vue'
 
@@ -48,6 +76,7 @@ export default defineComponent({
   components:{
     TargetContents,
     First,
+    Second,
     IntersectionLeft,
     IntersectionRight,
   },
