@@ -41,7 +41,6 @@
 <script lang="ts">
 import { defineComponent, reactive, onMounted, ref } from 'vue'
 
-
 export default defineComponent({
   components:{},
   setup() {
@@ -180,8 +179,6 @@ export default defineComponent({
         spanRatio = entry.intersectionRatio;
       });
     }
-  
-
 
     return{
       state,
@@ -195,7 +192,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 #first {
-  background-color: rgb(255, 215, 0, 0.2);
   min-height: 200px;
   width: 100%;
   max-width: 100%;
@@ -214,7 +210,6 @@ export default defineComponent({
   }
   .font-icon {
     font-size: 26px;
-    // margin: 20px 0;
     height: 26px;
   }
   .section-icon {
@@ -222,7 +217,6 @@ export default defineComponent({
   }
   .font-h1 {
     font-size: 40px;
-    // margin: 20px 0;
     height: 40px;
   }
   .section-h1 {

@@ -1,6 +1,7 @@
 <template>
   <div id="second">
     <div class="contents">
+      <!-- アイコン -->
       <section class="section-icon">
         <div style="height: 40px;"></div>
         <div
@@ -34,13 +35,11 @@
         </div>
       </section>
     </div>
-    <!-- アイコン -->
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, onMounted, ref } from 'vue'
-
 
 export default defineComponent({
   components:{},
@@ -180,8 +179,6 @@ export default defineComponent({
         spanRatio = entry.intersectionRatio;
       });
     }
-  
-
 
     return{
       state,
@@ -195,7 +192,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 #second {
-  background-color: rgb(255, 215, 0, 0.2);
   min-height: 200px;
   width: 100%;
   max-width: 100%;
@@ -214,7 +210,6 @@ export default defineComponent({
   }
   .font-icon {
     font-size: 26px;
-    // margin: 20px 0;
     height: 26px;
   }
   .section-icon {
@@ -222,7 +217,6 @@ export default defineComponent({
   }
   .font-h1 {
     font-size: 40px;
-    // margin: 20px 0;
     height: 40px;
   }
   .section-h1 {
