@@ -31,9 +31,9 @@
       <section class="apply" ref="scrollRef">
         <div class="box b-green">
           <h2 class="t-center">
-            あなたは<br>
-            なぜ<br>
-            我が社に？<br>
+            体験を届ける<br>
+            今回はスクロール<br>
+            intersection observer APIに注目した<br>
           </h2>
           <div class="t-center w-100">
             <router-link to="first">
