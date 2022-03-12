@@ -60,6 +60,8 @@
     </section> 
   </article>
   <Fin />
+
+  <Mix />
   
   <div class="w-100 h-50"></div>
   <footer class="all-center w-100">
@@ -86,6 +88,7 @@ import Second from '../components/intersection/second.vue'
 import IntersectionLeft from '../components/intersection/intersectionLeft.vue'
 import IntersectionRight from '../components/intersection/intersectionRight.vue'
 import Fin from '../components/intersection/fin.vue'
+import Mix from '../components/intersection/mix.vue'
 
 export default defineComponent({
   components:{
@@ -95,6 +98,7 @@ export default defineComponent({
     IntersectionLeft,
     IntersectionRight,
     Fin,
+    Mix,
   },
   setup() {
     const arrayMessage = () => {
