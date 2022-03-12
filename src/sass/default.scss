@@ -4,8 +4,11 @@
   color: rgb(252, 241, 196);
   display: block;
 }
-.hei {
-  height: 50px;
+.hei100 {
+  height: 100vh;
+}
+.h-50 {
+  height: 50vh;
 }
 .t-center {
   text-align: center;
@@ -43,7 +46,9 @@
 .t-white {
   color: #fff;
 }
-
+.border-radius {
+  border-radius: 30px;
+}
 a {
   text-decoration: none;
 }

@@ -5,7 +5,7 @@
   >
   <div>
     <span class="pd20">
-      動きのあるwebサイトで体験を届けたい<br>
+      webから体験を届ける<br>
       interseciton observer APIに注目したページです。
     </span>
   </div>
@@ -20,7 +20,7 @@
         <h3 style="font-size: 64px; margin-top: 17px;">
           上昇します。上昇します。
         </h3>
-        <p style="font-size: 21px; margin: 27px auto;">
+        <p style="font-size: 21px; line-height: 40px; margin: 27px auto;">
           上昇します。上昇します。上昇します。上昇します。<br>
           上昇します。上昇します。上昇します。<br>
           上昇します。上昇します。<br>
@@ -124,12 +124,6 @@ export default defineComponent({
     display: inline-block;
     transform: matrix(1, 0, 0, 1, 0, 50);
   }
-
-  // .a15vh {
-  //   display: inline-block;
-  //   height: 100px;
-  //   width: 100%;
-  // }
   .up15vh {
     animation: imagesTextLeft 1s;
     height: 300px;
