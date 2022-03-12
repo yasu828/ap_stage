@@ -4,37 +4,9 @@
     <p class="ppo">
       <a href="inter">inter</a>
     </p>
-    <p class="ppo">
-      <a href="intersection-left">left</a>
-    </p>
-    <p class="ppo">
-      <a href="intersection-right">right</a>
-    </p>
 
     <p class="ppo">
-      <a href="contents">contents</a>
-    </p>
-    <p class="ppo">
-      <a href="first">first</a>
-    </p>
-      <span class="pointer" :class="state.kuri" @click="onClickcolor">クリン</span>
-      {{ state.bin }}
-    <p class="ppo">
-      <router-link
-        to="/"
-      >
-      home
-      </router-link>
-    </p>
-    <!-- <p class="ppo">
-      <router-link
-        to="/ka"
-      >
-      kakaka
-      </router-link>
-    </p> -->
-    <p class="ppo">
-      <a href="/About">about</a>
+      <a href="/">Home</a>
     </p>
   </header>
 </div>
@@ -49,9 +21,6 @@ export default defineComponent({
   components: {},
   setup() {
     const state = reactive({
-      count: 0,
-      kuri:"red",
-      bin: window.scrollY,
     });
 
     return{
