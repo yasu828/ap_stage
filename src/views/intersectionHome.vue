@@ -64,7 +64,7 @@
   <Mix />
   
   <div class="w-100 h-50"></div>
-  <footer class="all-center w-100">
+  <footer class="all-center w-100 hei100">
     <div class="message-box">
       <span 
         v-for="(e, i) in state.message"
@@ -76,13 +76,22 @@
       </span>
     </div>
   </footer>
-  <div style="height: 10px; width:100%;"></div>
+</div>
+
+<div
+  id="back"
+  class="w-100 t-center"
+  @click="onClickBack"
+>
+  <span class="pointer">
+    TOPへ🔼
+  </span>
 </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, onMounted, ref } from 'vue'
-import TargetContents from './TargetContents.vue'
+import TargetContents from '../components/intersection/TargetContents.vue'
 import First from '../components/intersection/first.vue'
 import Second from '../components/intersection/second.vue'
 import IntersectionLeft from '../components/intersection/intersectionLeft.vue'
@@ -173,10 +182,15 @@ export default defineComponent({
       });
     }
 
+    const onClickBack = () => {
+      window.scroll({top: 0, behavior: 'smooth'});
+    }
+
     return {
       state,
       messageRef,
       arrayMessage,
+      onClickBack
     }
   },
 })
@@ -220,5 +234,9 @@ export default defineComponent({
       opacity: 0.1;
     }
   }
+}
+#back {
+  height: 30px;
+  font-size: 20px;
 }
 </style>
