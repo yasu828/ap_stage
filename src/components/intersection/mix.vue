@@ -3,10 +3,10 @@
     <div class="h-50"></div>
     <div class="mix-ref-child hv" ref="mixRef">
       <div class="mix-box flex j-center">
-        <div class="mix-p1" :style="`transform: matrix(1, 0, 0, 1, ${state.rightMatrixMix}, 0);`">
+        <div class="mix-p1" :style="`transform: matrix(1, 0, 0, 1, ${state.leftMatrixMix}, 0);`">
           create mix
         </div>
-        <div class="mix-p2" :style="`transform: matrix(1, 0, 0, 1, ${state.leftMatrixMix}, 0);`">
+        <div class="mix-p2" :style="`transform: matrix(1, 0, 0, 1, ${state.rightMatrixMix}, 0);`">
           create mix
         </div>
       </div>
@@ -21,8 +21,8 @@ export default defineComponent({
   components:{},
   setup() {
     const state = reactive({
-      rightMatrixMix:1.0,
       leftMatrixMix:1.0,
+      rightMatrixMix:1.0,
     })
 
     onMounted(() => {
@@ -57,17 +57,17 @@ export default defineComponent({
     const mixIntersect = (entries:any) => {
       entries.forEach((entry:any) => {
         if (entry.intersectionRatio > mixRatio) {
-          state.leftMatrixMix = 1 - (entry.intersectionRatio * 100)
-          state.rightMatrixMix = -1 + (entry.intersectionRatio * 100)
+          state.rightMatrixMix = -100 + (entry.intersectionRatio * 200)
+          state.leftMatrixMix = 100 - (entry.intersectionRatio * 200)
         } else {
-          state.leftMatrixMix = 1 - (entry.intersectionRatio * 100)
-          state.rightMatrixMix = -1 + (entry.intersectionRatio * 100)
+          state.rightMatrixMix = -100 + (entry.intersectionRatio * 200)
+          state.leftMatrixMix = 100 - (entry.intersectionRatio * 200)
         }
         if (entry.isIntersecting) {
           // console.log(entry)
           console.log("message-in")
         } else {
-          state.rightMatrixMix = 1.0
+          state.leftMatrixMix = 1.0
           console.log("message-out")
         }
         mixRatio = entry.intersectionRatio
@@ -101,13 +101,13 @@ export default defineComponent({
     overflow: hidden;
   }
   .mix-p1 {
-    height: calc(100vh / 10);
-    width: calc(100vh / 10);
+    height: calc(100vh / 5);
+    width: calc(100vh / 5);
     background-color: orange;
   }
   .mix-p2 {
-    height: calc(100vh / 10);
-    width: calc(100vh / 10);
+    height: calc(100vh / 5);
+    width: calc(100vh / 5);
     background-color: paleturquoise;
   }
 }
