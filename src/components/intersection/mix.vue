@@ -1,13 +1,22 @@
 <template>
-  <div id="mix">
-    <div class="h-50"></div>
+  <div id="mix" class="w-100">
+    <div class="h-50 min-h"></div>
     <div class="mix-ref-child hv" ref="mixRef">
       <div class="mix-box flex j-center">
-        <div class="mix-p1" :style="`transform: matrix(1, 0, 0, 1, ${state.leftMatrixMix}, 0);`">
-          create mix
+        <div class="flex a-center" :style="`transform: matrix(1, 0, 0, 1, ${state.leftMatrixMix}, 0);`">
+          <span class="t-center">
+            orange color<br>
+            version
+          </span>
+          <div class="mix-contents mix-p1"></div>
         </div>
-        <div class="mix-p2" :style="`transform: matrix(1, 0, 0, 1, ${state.rightMatrixMix}, 0);`">
-          create mix
+        <div class="flex a-center" :style="`transform: matrix(1, 0, 0, 1, ${state.rightMatrixMix}, 0);`">
+          <div class="mix-contents mix-p2">
+          </div>
+          <span class="t-center">
+            aqua color<br>
+            version
+          </span>
         </div>
       </div>
     </div>
@@ -57,11 +66,11 @@ export default defineComponent({
     const mixIntersect = (entries:any) => {
       entries.forEach((entry:any) => {
         if (entry.intersectionRatio > mixRatio) {
-          state.rightMatrixMix = -100 + (entry.intersectionRatio * 200)
-          state.leftMatrixMix = 100 - (entry.intersectionRatio * 200)
+          state.rightMatrixMix = -100 + (entry.intersectionRatio * 150)
+          state.leftMatrixMix = 100 - (entry.intersectionRatio * 150)
         } else {
-          state.rightMatrixMix = -100 + (entry.intersectionRatio * 200)
-          state.leftMatrixMix = 100 - (entry.intersectionRatio * 200)
+          state.rightMatrixMix = -100 + (entry.intersectionRatio * 150)
+          state.leftMatrixMix = 100 - (entry.intersectionRatio * 150)
         }
         if (entry.isIntersecting) {
           // console.log(entry)
@@ -84,31 +93,32 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 #mix {
-  width: 100%;
+
+  .min-h {
+    min-height: 500px;
+  }
 
   .mix-ref-child {
     height: calc(80vh - 105px);
     width: 100%;
-    border: solid;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .hv {
-    background-color: rgba(93, 180, 209, 0.651);
-  }
+
   .mix-box {
     overflow: hidden;
-  }
-  .mix-p1 {
-    height: calc(100vh / 5);
-    width: calc(100vh / 5);
-    background-color: orange;
-  }
-  .mix-p2 {
-    height: calc(100vh / 5);
-    width: calc(100vh / 5);
-    background-color: paleturquoise;
+    
+    .mix-p1 {
+      height: calc(100vh / 3);
+      width: calc(100vh / 3);
+      background-color: orange;
+    }
+    .mix-p2 {
+      height: calc(100vh / 3);
+      width: calc(100vh / 3);
+      background-color: aqua;
+    }
   }
 }
 </style>
