@@ -172,7 +172,6 @@ export default defineComponent({
     const moreIntersect = (entries:any) => {
       entries.forEach((entry:any) => {
         if (entry.isIntersecting) {
-          console.log(entry)
           entry.target.classList.add("message-in")
           state.messageShow = true
         } else {

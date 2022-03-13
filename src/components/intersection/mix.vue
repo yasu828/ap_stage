@@ -1,6 +1,16 @@
 <template>
   <div id="mix">
-    create mix
+    <div class="h-50"></div>
+    <div class="mix-ref-child hv" ref="mixRef">
+      <div class="mix-box flex j-center">
+        <div class="mix-p1" :style="`transform: matrix(1, 0, 0, 1, ${state.rightMatrixMix}, 0);`">
+          create mix
+        </div>
+        <div class="mix-p2" :style="`transform: matrix(1, 0, 0, 1, ${state.leftMatrixMix}, 0);`">
+          create mix
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -11,6 +21,8 @@ export default defineComponent({
   components:{},
   setup() {
     const state = reactive({
+      rightMatrixMix:1.0,
+      leftMatrixMix:1.0,
     })
 
     onMounted(() => {
@@ -34,17 +46,31 @@ export default defineComponent({
     const mixObserve = (async() => {
       let options = {
         root: null,
-        rootMargin: "0px",
+        rootMargin: "-105px 0px -10px",
         threshold: ThresholdList()
       }
       let mixobserver;
       mixobserver = new IntersectionObserver(mixIntersect, options);
       mixobserver.observe(mixRef.value)
     })
-
+    let mixRatio = 0.5
     const mixIntersect = (entries:any) => {
       entries.forEach((entry:any) => {
-        console.log(entry)
+        if (entry.intersectionRatio > mixRatio) {
+          state.leftMatrixMix = 1 - (entry.intersectionRatio * 100)
+          state.rightMatrixMix = -1 + (entry.intersectionRatio * 100)
+        } else {
+          state.leftMatrixMix = 1 - (entry.intersectionRatio * 100)
+          state.rightMatrixMix = -1 + (entry.intersectionRatio * 100)
+        }
+        if (entry.isIntersecting) {
+          // console.log(entry)
+          console.log("message-in")
+        } else {
+          state.rightMatrixMix = 1.0
+          console.log("message-out")
+        }
+        mixRatio = entry.intersectionRatio
       });
     }
 
@@ -59,5 +85,30 @@ export default defineComponent({
 <style lang="scss" scoped>
 #mix {
   width: 100%;
+
+  .mix-ref-child {
+    height: calc(80vh - 105px);
+    width: 100%;
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hv {
+    background-color: rgba(93, 180, 209, 0.651);
+  }
+  .mix-box {
+    overflow: hidden;
+  }
+  .mix-p1 {
+    height: calc(100vh / 10);
+    width: calc(100vh / 10);
+    background-color: orange;
+  }
+  .mix-p2 {
+    height: calc(100vh / 10);
+    width: calc(100vh / 10);
+    background-color: paleturquoise;
+  }
 }
 </style>
