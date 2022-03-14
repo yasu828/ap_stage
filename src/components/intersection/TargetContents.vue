@@ -3,12 +3,6 @@
   class="t-center"
   id="section1"
   >
-  <div>
-    <span class="pd20">
-      webから体験を届ける<br>
-      interseciton observer APIに注目したページです。
-    </span>
-  </div>
     <div
     ref="targetBox"
     class="up15vh"
@@ -120,10 +114,11 @@ export default defineComponent({
   height: 100%;
   min-height: 570px;
 
-  .pd20 {
-    display: inline-block;
-    transform: matrix(1, 0, 0, 1, 0, 50);
+  .observer-title {
+    font-size: 28px;
+    text-align: center;
   }
+
   .up15vh {
     animation: imagesTextLeft 1s;
     height: 300px;

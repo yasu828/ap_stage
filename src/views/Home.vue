@@ -27,35 +27,38 @@
       </span>
     </section>
 
-    <section class="apply" ref="scrollRef">
-      <div class="box b-green">
-        <h2 class="t-center">
+    <section class="apply">
+      <div class="box b-green a-center">
+        <h2 class="explain t-center">
           体験を届ける<br>
-          今回はスクロール<br>
-          intersection observer APIに注目した<br>
+          intersection observer APIに注目<br>
+          動き続けるサイト制作<br>
         </h2>
-        <div class="t-center w-100">
-          <router-link to="first">
-            <span class="t-center">リンク先</span>
-          </router-link>
-        </div>
+        <p class="explain-title">実装機能</p>
+        <ul class="explain-list">
+          
+          <li>読み上がるメッセージ</li>
+          <li>グラデーションカラー</li>
+          <li>シュッと浮かび上がる</li>
+          <li>フワッと浮かび上がる</li>
+          <li>拡大 + 展開</li>
+          <li>左右比較</li>
+          <li>余韻の残る締めくくり</li>
+        </ul>
       </div>
-      <div class="box b-blue">
+      <div class="box b-blue a-center">
         <h2 class="t-center">
-          あなたは<br>
-          どうなりたい？<br>
+          枠内をスクロールして入る🔽<br>
+          10を超えEnterになると入ります。
         </h2>
-        <div
-          class="h-24 bg-blue-200 transition-all duration-500 transform"
-          :class="{
-            'translate-y-0 opacity-100': isIntersectingElement,
-            'translate-y-full opacity-0': !isIntersectingElement,
-          }"
-        >
-        </div>
-        <div class="t-center w-100">
-          <a href="inter">inter</a>
-        </div>
+        <ul class="t-center w-100 enter-area" ref="areaRef">
+          <li class="enter-area-list all-center" v-for="(num, i) in 10" :key="i">
+            <p>{{ i + 1 }}</p>
+          </li>
+          <li class="enter-area-switch all-center" ref="enterRef">
+            <a href="inter">Enter</a>
+          </li>
+        </ul>
       </div>
     </section>
   </div>
@@ -71,7 +74,6 @@ import homeComic from "../comic/home";
 export default defineComponent({
   name: "home",
   components:{
-    // AppHeader,
   },
   setup(){
     const state = reactive({
@@ -81,7 +83,8 @@ export default defineComponent({
 
     const store = useStore();
 
-    ref(null);
+    const enterRef = ref()
+    const areaRef = ref()
 
     const { 
       dispMsg
@@ -94,16 +97,48 @@ export default defineComponent({
 
     onMounted(async() => {
       state.hei = window.scrollY;
+      mixObserve()
     });
 
     const onClickapplyScroll = () => {
       dispMsg()
     }
 
+    const ThresholdList = () => {
+      let thresholds = [];
+      let numSteps = 0;
+      for (let i = 1.0; i <= numSteps; i++) {
+        let ratio = i / numSteps;
+        thresholds.push(ratio);
+      }
+      thresholds.push(1);
+      return thresholds;
+    }
+
+    const mixObserve = (async() => {
+      let options = {
+        root: areaRef.value,
+        rootMargin: "2px 0px",
+        threshold: ThresholdList()
+      }
+      let mixobserver;
+      mixobserver = new IntersectionObserver(mixIntersect, options);
+      mixobserver.observe(enterRef.value)
+    })
+    const mixIntersect = (entries:any) => {
+      entries.forEach((entry:any) => {
+        if (entry.intersectionRatio > 0.6) {
+          entry.target.children[0].click()
+        }
+      });
+    }
+
     return {
       state,
       onClickapplyScroll,
       dispMsg,
+      enterRef,
+      areaRef
     }
   },
 })

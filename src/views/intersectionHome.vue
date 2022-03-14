@@ -1,6 +1,16 @@
 <template>
 <div id="intersection-home">
+  <div class="t-center">
+    <span class="pd20 t-center">
+      webから体験を届ける<br>
+      interseciton observer APIに注目したページです。
+    </span>
+  </div>
+  <div class="t-center">
+    <p class="observer-title pd20">読み上がるメッセージ</p>
+  </div>
   <TargetContents />
+  <p class="observer-title">シュッと浮かび上がる</p>
   <p style="height:80px; font-size: 48px; padding-top:10px;" class="t-center">(opacity/transform)</p>
   <article class="flex">
     <section class="inter-section-left">
@@ -30,6 +40,7 @@
       </second>
     </section> 
   </article>
+  <p class="observer-title">フワッと浮かび上がる</p>
   <p style="height:80px; font-size: 48px; padding-top:10px;" class="t-center">(transition:ture/false)</p>
   <article class="flex">
     <section class="inter-section-left">
@@ -59,11 +70,13 @@
       </intersection-right>
     </section> 
   </article>
+  <p class="observer-title">拡大 + 展開</p>
   <Fin />
-
+  
   <Mix />
   
   <div class="w-100 h-50"></div>
+  <p class="observer-title2">余韻の残る締めくくり</p>
   <footer class="all-center w-100 hei100">
     <div class="message-box">
       <span 
@@ -208,14 +221,12 @@ export default defineComponent({
     border: solid;
     overflow : hidden;
   }
-
   .message {
     height: 200px;
     margin: 5px;
     display: flex;
     align-items: center;
     font-size: 40px;
-    // border: solid;
     opacity: 0;
   }
   .message-box {
@@ -232,6 +243,21 @@ export default defineComponent({
       transform: translate(0, 30vh);
       opacity: 0.1;
     }
+  }
+  .observer-title {
+    height: 40px;
+    font-size: 28px;
+    margin-top: 80px;
+    text-align: center;
+  }
+  .observer-title2 {
+    font-size: 28px;
+    text-align: center;
+    transform: matrix(1, 0, 0, 1, 0, 180);
+  }
+  .pd20 {
+    display: inline-block;
+    transform: matrix(1, 0, 0, 1, 0, 50);
   }
 }
 #back {

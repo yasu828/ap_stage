@@ -2,11 +2,11 @@
 <div id="app-header">
   <header class="flex header">
     <p class="ppo">
-      <a href="inter">inter</a>
+      <a href="inter">■intersection observer</a>
     </p>
 
     <p class="ppo">
-      <a href="/">Home</a>
+      <a href="/">■Home</a>
     </p>
   </header>
 </div>

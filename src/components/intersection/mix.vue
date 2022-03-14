@@ -1,6 +1,7 @@
 <template>
   <div id="mix" class="w-100">
     <div class="h-50 min-h"></div>
+    <p class="observer-title">左右比較</p>
     <div class="mix-ref-child hv" ref="mixRef">
       <div class="mix-box flex j-center">
         <div class="flex a-center" :style="`transform: matrix(1, 0, 0, 1, ${state.leftMatrixMix}, 0);`">
@@ -93,6 +94,12 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 #mix {
+  .observer-title {
+    height: 40px;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
 
   .min-h {
     min-height: 500px;
@@ -110,7 +117,7 @@ export default defineComponent({
     overflow: hidden;
     
     .mix-p1 {
-      height: calc(100vh / 3);
+      height: calc(100vh / 2);
       width: calc(100vh / 3);
       background-color: orange;
     }

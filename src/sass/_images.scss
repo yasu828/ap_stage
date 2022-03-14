@@ -1,8 +1,44 @@
 #top-body{
   z-index: 1;
   width: 100%;
+
+  .enter-area{
+    border: solid;
+    height: 120px;
+    width: 300px;
+    overflow: auto;
+    margin-top: 10px;
+
+    .enter-area-list {
+      height: 120px;
+      width: 300px;
+      border: solid 1px;
+      background-color: rgba(131, 236, 236, 0.886);
+    }
+    .enter-area-switch {
+      height: 120px;
+      width: 300px;
+      background-color: chartreuse;
+    }
+  }
   
-  
+  .explain {
+    font-size: 24px;
+  }
+  .explain-title {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  .explain-list{
+    margin-top: 20px;
+    padding: 5px;
+    border: solid;
+    line-height: 30px;
+    
+    > li{
+      font-size: 18px;
+    }
+  }
 
   .anchor{
     height: 100px;
@@ -31,57 +67,6 @@
     }
   }
 
-  .disablity{
-    height: 170px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .other{
-    h3{
-      width: 100%;
-      padding: 62px 0px 31px 0px;
-      text-align: center;
-      display: block;
-    }
-    .inner{
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 980px;
-      margin: 0 auto;
-      .companies{
-        border: solid 2px rgb(41, 41, 105);
-        margin: 0px 14px 21px 14px;
-        width: calc(50% - 36px);
-        text-align: center;
-
-        a{
-          display: block;
-          width: 45%;
-          height: auto;
-          margin: 0px auto;
-          text-decoration: none;
-          border-radius: 100px;
-          background: linear-gradient(to right, #22a6e6 30%, #004db1 100%);
-          padding: 10px;
-
-          .blue-btn{
-            color: white;
-          }
-        }
-        .toggleArea{
-          padding: 0px 0px 35px 0px;
-          background-color: #fff;
-        }
-      }
-    }
-  }
-  
-  .footer{
-    height: 150px;
-    background-color: rgba(156, 202, 156, 0.507);
-  }
   .images{
     position: relative;
     display: flex;
