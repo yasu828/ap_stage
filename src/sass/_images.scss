@@ -110,7 +110,7 @@
       top: 45%;
       color: coral;
       font-size: 48px;
-      // opacity: 1;
+      padding: 20px;
       animation: imagesTextLeft 1s;
     }
     @keyframes imagesTextLeft {
@@ -152,6 +152,7 @@
       top: 45%;
       color: coral;
       font-size: 48px;
+      padding: 20px;
       opacity: 1;
       animation: imagesTextCenter 1.5s;
     }
@@ -195,6 +196,7 @@
       top: 45%;
       color: coral;
       font-size: 48px;
+      padding: 20px;
       opacity: 1;
       animation: imagesTextRight 2s;
     }

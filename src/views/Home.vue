@@ -2,27 +2,27 @@
   <div id="top-body">
     <section class="images">
       <!-- メモ：後ろの画像はback-groud -->
-      <div class="box imageanimationleft">
-        <p class="imagestextleft">テキストメッセージ</p>
+      <div class="box imageanimationleft t-center">
+        <p class="imagestextleft">webで体験を</p>
       </div>
       <div class="box imageanimationcenter">
         <p class="imagestextcenter">
-          テキストメッセージ<br>
-          テキストメッセージ
+          スクロールで<br>
+          動き続ける
         </p>
       </div>
       <div class="box imageanimationright">
         <p class="imagestextright">
-          テキストメッセージ<br>
-          テキストメッセージ<br>
-          テキストメッセージ
+          intersection<br>
+          bserver API<br>
+          機能一覧
         </p>
       </div>
     </section>
 
     <section class="anchor">
       <span id="apply" class="anchor-text pointer" @click="onClickapplyScroll">
-        プロフィール<br>
+        概要<br>
         ⌵
       </span>
     </section>
