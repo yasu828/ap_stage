@@ -1,13 +1,14 @@
-#top-body{
+#top-body {
   z-index: 1;
   width: 100%;
 
-  .enter-area{
-    border: solid;
+  .enter-area {
     height: 120px;
     width: 80%;
-    overflow: auto;
+    max-width: 300px;
     margin-top: 10px;
+    border: solid;
+    overflow: auto;
 
     .enter-area-list {
       height: 120px;
@@ -29,24 +30,24 @@
     font-size: 20px;
     margin-top: 30px;
   }
-  .explain-list{
+  .explain-list {
     margin-top: 20px;
     padding: 5px;
     border: solid;
     line-height: 30px;
     
-    > li{
+    > li {
       font-size: 18px;
     }
   }
 
-  .anchor{
+  .anchor {
     height: 100px;
     z-index: 2;
     background-color: #000;
     text-align: center;
 
-    .anchor-text{
+    .anchor-text {
       text-decoration: none;
       list-style: none;
       font-size: 36px;
@@ -54,20 +55,17 @@
     }
   }
 
-  .apply{
+  .apply-box {
+    width: 50%;
+    height: 582px;
+    min-height: 40vw;
+    border:#4f1486 solid 1px;
     display: flex;
-    .box{
-      width: 50%;
-      height: 582px;
-      min-height: 40vw;
-      border:#4f1486 solid 1px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .images{
+  .images {
     position: relative;
     display: flex;
     width: 100%;
@@ -76,12 +74,17 @@
     padding: 0px;
     overflow: hidden;
   
-    .box{
+    .images-box {
       width: calc(100% / 3);
       display: inline-block;
       height:calc(100vh - 190px);
     }
 
+    .image-animation-common {
+      height: 450px;
+      position: relative;
+      background-repeat: no-repeat;
+    }
     .image-common {
       text-align: center;
       position: absolute;
@@ -103,13 +106,12 @@
         opacity: 1;
       }
     }
+
     // アニメーション左
-    .imageanimationleft{
+    .imageanimationleft {
       background-image: url("./assets/images/fog.png");
-      background-repeat: no-repeat;
       animation: backGroundImageLeft 2s;
-      position: relative;
-      height: 450px;
+      @extend .image-animation-common;
     }
     @keyframes backGroundImageLeft {
       0% {
@@ -126,19 +128,16 @@
         background-image: url("./assets/images/fog.png");
       }
     }
-    .imagestextleft{
+    .imagestextleft {
       animation: imagesTextAnimation 1s;
       @extend .image-common;
     }
-    
-  
+
     // アニメーション真ん中
-    .imageanimationcenter{
+    .imageanimationcenter {
       background-image: url("./assets/images/cat.png");
-      background-repeat: no-repeat;
       animation: backGroundImageCenter 3.1s;
-      position: relative;
-      height: 450px;
+      @extend .image-animation-common;
     }
     @keyframes backGroundImageCenter {
       0% {
@@ -155,18 +154,16 @@
         background-image: url("./assets/images/cat.png");
       }
     }
-    .imagestextcenter{
+    .imagestextcenter {
       @extend .image-common;
       animation: imagesTextAnimation 1.5s;
     }
-  
+
     // アニメーション右
-    .imageanimationright{
+    .imageanimationright {
       background-image: url("./assets/images/night.png");
-      background-repeat: no-repeat;
       animation: backGroundImageRight 4.5s;
-      position: relative;
-      height: 450px;
+      @extend .image-animation-common;
     }
     @keyframes backGroundImageRight {
       0% {
@@ -183,8 +180,7 @@
         background-image: url("./assets/images/night.png");
       }
     }
-    
-    .imagestextright{
+    .imagestextright {
       @extend .image-common;
       animation: imagesTextAnimation 2s;
     }

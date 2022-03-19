@@ -2,16 +2,16 @@
   <div id="top-body">
     <section class="images">
       <!-- メモ：後ろの画像はback-groud -->
-      <div class="box imageanimationleft t-center">
+      <div class="images-box imageanimationleft t-center">
         <p class="imagestextleft">webで体験を</p>
       </div>
-      <div class="box imageanimationcenter">
+      <div class="images-box imageanimationcenter">
         <p class="imagestextcenter">
           スクロールで<br>
           動き続ける
         </p>
       </div>
-      <div class="box imageanimationright">
+      <div class="images-box imageanimationright">
         <p class="imagestextright">
           intersection<br>
           bserver API<br>
@@ -27,8 +27,8 @@
       </span>
     </section>
 
-    <section class="apply">
-      <div class="box b-green a-center">
+    <section class="apply flex">
+      <div class="apply-box b-green a-center">
         <h2 class="explain t-center">
           体験を届ける<br>
           intersection observer APIに注目<br>
@@ -46,7 +46,7 @@
           <li>余韻の残る締めくくり</li>
         </ul>
       </div>
-      <div class="box b-blue a-center">
+      <div class="apply-box b-blue a-center">
         <h2 class="t-center">
           枠内をスクロールして入る🔽<br>
           10を超えEnterになると入ります。
