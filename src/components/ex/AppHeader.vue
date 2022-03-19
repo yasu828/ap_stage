@@ -2,11 +2,15 @@
 <div id="app-header">
   <header class="flex header">
     <p class="ppo">
-      <a href="inter">■intersection observer</a>
+      <router-link to="inter">
+        ■intersection observer
+      </router-link>
     </p>
 
     <p class="ppo">
-      <a href="/">■Home</a>
+      <router-link to="/">
+        ■Home
+      </router-link>
     </p>
   </header>
 </div>
