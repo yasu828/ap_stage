@@ -90,6 +90,18 @@
       font-size: 48px;
       padding: 20px;
       opacity: 1;
+      @media screen and (max-width: 990px) {
+        font-size: 24px;
+      }
+    }
+    @keyframes imagesTextAnimation {
+      from{
+        transform: translate(0, -50px);
+        opacity: 0;
+      }
+      to{
+        opacity: 1;
+      }
     }
     // アニメーション左
     .imageanimationleft{
@@ -115,21 +127,10 @@
       }
     }
     .imagestextleft{
-      animation: imagesTextLeft 1s;
+      animation: imagesTextAnimation 1s;
       @extend .image-common;
-      @media screen and (max-width: 990px) {
-        font-size: 24px;
-      }
     }
-    @keyframes imagesTextLeft {
-      from{
-        transform: translate(0, -50px);
-        opacity: 0;
-      }
-      to{
-        opacity: 1;
-      }
-    }
+    
   
     // アニメーション真ん中
     .imageanimationcenter{
@@ -156,19 +157,7 @@
     }
     .imagestextcenter{
       @extend .image-common;
-      animation: imagesTextCenter 1.5s;
-      @media screen and (max-width: 990px) {
-        font-size: 24px;
-      }
-    }
-    @keyframes imagesTextCenter {
-      from{
-        transform: translate(0, -50px);
-        opacity: 0;
-      }
-      to{
-        opacity: 1;
-      }
+      animation: imagesTextAnimation 1.5s;
     }
   
     // アニメーション右
@@ -197,19 +186,7 @@
     
     .imagestextright{
       @extend .image-common;
-      animation: imagesTextRight 2s;
-      @media screen and (max-width: 990px) {
-        font-size: 24px;
-      }
-    }
-    @keyframes imagesTextRight {
-      from{
-        transform: translate(0, -50px);
-        opacity: 0;
-      }
-      to{
-        opacity: 1;
-      }
+      animation: imagesTextAnimation 2s;
     }
   }
 }
