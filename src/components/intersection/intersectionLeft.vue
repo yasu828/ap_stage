@@ -150,7 +150,6 @@ export default defineComponent({
   min-height: 250px;
   width: 100%;
   max-width: 100%;
-  // background-color: rgba(184, 175, 175, 0.057);
   overflow-wrap: break-word;
 
   .contents {

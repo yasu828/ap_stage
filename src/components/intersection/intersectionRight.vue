@@ -150,7 +150,6 @@ export default defineComponent({
   min-height: 250px;
   width: 100%;
   max-width: 100%;
-  // background-color: rgba(128, 128, 128, 0.502);
   overflow-wrap: break-word;
 
   .contents {
@@ -159,16 +158,6 @@ export default defineComponent({
     margin: 0px auto;
     width: 65%;
   }
-
-  // .list-enter-active,
-  // .list-leave-active {
-  //   transition: 0.7s ease;
-  // }
-  // .list-enter-from,
-  // .list-leave-to {
-  //   opacity: 0;
-  //   transform: translateY(40px);
-  // }
 
   .left-reficon {
     height: 40px;
