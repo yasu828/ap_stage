@@ -56,7 +56,7 @@
             <p>{{ i + 1 }}</p>
           </li>
           <li class="enter-area-switch all-center" ref="enterRef">
-            <a href="inter">Enter</a>
+            <router-link to="inter">Enter</router-link>
           </li>
         </ul>
       </div>
